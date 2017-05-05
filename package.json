@@ -1,0 +1,20 @@
+{
+  "name": "gamee-js-tools",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "b:dev": "webpack --env=dev --config config/webpack.config.js --progress --profile --colors",
+    "b:dist": "webpack --env=prod --config config/webpack.config.js --progress --profile --colors",
+    "watch": "webpack --env=dev --config config/webpack.config.js --progress --profile --colors --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "gitlab@gitlab.cleevio.cz:gamee/gamee-js-tools.git"
+  },
+  "author": "EntityBlack",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^2.4.1"
+  }
+}
