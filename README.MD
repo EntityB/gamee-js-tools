@@ -10,3 +10,10 @@ npm run b:dist
 // watching changes in src and doing b:dev on the run
 npm run watch
 ```
+
+Run
+
+```
+cd www
+python -m SimpleHTTPServer 8081
+```
