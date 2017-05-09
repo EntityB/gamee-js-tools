@@ -17,32 +17,178 @@ body, a, a:hover, h1, h2, h3, h4, h5, p {
 .navbar {
     border: none;
     background-color: #FFFFFF;
-    height: 64px;
-    padding: 12px 50px; 
+    /*height: 64px;*/
+    /*padding: 12px 50px; */
 }
 
+.navbar ul.nav.navbar-nav.align-right {
+    float: right;
+}
 .navbar ul li {
-    height: 40px;
-    margin: 0 45px;
+    /*height: 40px;*/
+    /*margin: 0 45px;*/
     vertical-align: middle;
     text-align: center;
 }
 
-.navbar ul li a {
-    padding: 0;
-    margin: 0;
+.navbar-default .navbar-nav>li>a {
+    /*padding: 0;*/
+    /*margin: 0;*/
     vertical-align: middle;
-    text-align: center;
+    line-height: 40px;  
+    font-size: 14px;
+    color: #292e3d;
+    opacity: 0.6;
+    font-weight: 600;
+}
+
+.navbar-default .navbar-nav>li.logo>a {
+    opacity: 1.0;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
+    color: #292e3d;
+    background-color: #FFFFFF;
+    opacity: 0.6;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>.active>a:hover {
+    font-weight: 600;
+    opacity: 1.0;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
+    font-weight: 600;
+    opacity: 1.0;
 }
 
 .container {
-    width: 1440px;
+    /*width: 1440px;*/
+    text-align: center;
 }
 
 .page-content {
     min-height: 100%;
     /* navbar padding */
     padding-top: 64px;
+    position: relative;
+}
+
+button.green {
+    background: #5ac546;
+    color: #ffffff;
+    border-color: #5cce46;
+}
+
+button.green:hover, button.green:focus, button.green:focus:hover {
+    background: #55c340;
+    color: #ffffff;
+    border-color: #5cce46;
+}
+
+button.green:active, button.green:active:hover, button.green:active:focus {
+    background: #55c340;
+    color: #ffffff;
+    border-color: #5cce46;
+}
+
+.index-content {
+    margin-top: 150px;
+}
+
+.hamster-robot {
+    position: absolute;
+    bottom: 38px;
+    left: 0;
+    text-align: center;
+    height: 191px;
+    max-height: 191px;
+}
+
+.hamster-robot-wrapper {
+    margin: 0 auto;
+}
+
+.hamster-robot div.hamster-robot-image {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.hamster-robot-textbox-wrapper {
+    display: inline-block;
+}
+
+.hamster-robot-textbox {
+    width: 265px;
+    height: 88px;
+    border-radius: 4px;
+    background-color: #1a1d27;
+    display: inline-block;
+    margin: 0 0 28px 12px;
+    padding: 20px 30px;
+    position: relative;
+    vertical-align: top;
+    text-align: left;
+}
+
+.transform-zero {
+    -webkit-transform: skew(0, 0);
+    transform: skew(0, 0);
+}
+
+.hamster-robot-textbox p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #d4d4d4;
+    margin-bottom: 0;
+    z-index: 2;
+}
+
+.hamster-robot-textbox p a {
+    color: #0e73d7;
+}
+
+.hamster-robot-textbox-arrow {
+    width: 40.6px;
+    height: 30px;
+    -webkit-transform: skew(-20deg, -40deg);
+    transform: skew(-26deg, -37deg);
+    background-color: #1a1d27;
+    margin: 0;
+    bottom: -8px;
+    left: 16px;
+    position: absolute;
+}
+
+.index-content {    
+  text-align: left;
+}
+
+.index-content h1 {
+  font-family: RooneySans, "Comic Sans MS";
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.14;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 50px;
+}
+
+.index-content label {
+  margin-bottom: 12px;
+}
+
+#iframe-url, #iframe-url-sub {
+    font-size: 15px;
+    height: 48px;
+}
+
+#iframe-url {
+    padding: 0 26px;
+}
+
+#iframe-url-sub {
+    padding: 0 35px;
 }
 
 h2 {
@@ -62,8 +208,25 @@ h2 {
     background-color: #14161d;
 }
 
-.Rectangle {
-  width: 1440px;
-  height: 64px;
-  background-color: #ffffff;
-}
+
+@media (max-width: 768px) {
+    .navbar-fixed-top {
+        position: relative;
+    }
+    .navbar ul.nav.navbar-nav.align-right {
+        float: none;
+    }
+    .navbar-default .navbar-nav>li>a {
+        text-align: left;
+    }
+    .page-content {
+        min-height: 0; 
+        padding-top: 0px;
+    }
+    .index-content {
+        margin-bottom: 200px;
+    }
+    .hamster-robot {
+        position: relative;
+    }
+} 
