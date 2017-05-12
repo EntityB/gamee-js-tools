@@ -1,3 +1,2 @@
-var a = 50;
-var b = 40;
-var c = 30;
+import {gameeWeb} from './gameeWeb.js';
+import {tools} from './tools.js';

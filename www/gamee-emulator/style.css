@@ -1,3 +1,6 @@
+@font-face { font-family: RooneySans; src:url(/gamee-emulator/fonts/rooney_sans-webfont.ttf); }
+
+
 html {
     display: table;
     width:100%;
@@ -5,13 +8,22 @@ html {
 }
 
 body {    
-    background-color: #13161d;
+    background-color: #292e3d;
     display: table-cell;
 }
 
-body, a, a:hover, h1, h2, h3, h4, h5, p {
-    font-family: OpenSans,"Helvetica Neue", Helvetica, Arial, sans-serif;
+body, a, a:hover, h1, h2, h3, h4, h5, p, input, button {
+    font-family: 'Open Sans',"Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #FFFFFF;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, .form-control:focus {   
+    outline: none;
+    outline-color: transparent;
+}
+
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+    margin-left: 50px;
 }
 
 .navbar {
@@ -62,6 +74,11 @@ body, a, a:hover, h1, h2, h3, h4, h5, p {
     opacity: 1.0;
 }
 
+.github-ico {
+    height: 17px;
+    padding: 0 4px 4px;
+}
+
 .container {
     /*width: 1440px;*/
     text-align: center;
@@ -80,14 +97,19 @@ button.green {
     border-color: #5cce46;
 }
 
-button.green:hover, button.green:focus, button.green:focus:hover {
-    background: #55c340;
+button.green:hover, button.green:focus:hover, button.green:active:hover, button.green:active:focus {
+    background: #47ad33;
     color: #ffffff;
-    border-color: #5cce46;
+    border-color: #4fbb3a;
 }
 
-button.green:active, button.green:active:hover, button.green:active:focus {
-    background: #55c340;
+button.green:focus:hover, button.green:active:hover, button.green:active:focus {
+
+    padding-top: 9px;
+}
+
+button.green:active, button.green:focus {
+    background: #5ac546;
     color: #ffffff;
     border-color: #5cce46;
 }
@@ -166,7 +188,7 @@ button.green:active, button.green:active:hover, button.green:active:focus {
 
 .index-content h1 {
   font-family: RooneySans, "Comic Sans MS";
-  font-size: 36px;
+  font-size: 42px;
   font-weight: bold;
   line-height: 1.14;
   text-align: center;
@@ -188,7 +210,8 @@ button.green:active, button.green:active:hover, button.green:active:focus {
 }
 
 #iframe-url-sub {
-    padding: 0 35px;
+    padding-left: 35px;
+    padding-right: 35px;
 }
 
 h2 {

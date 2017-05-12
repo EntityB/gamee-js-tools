@@ -7,7 +7,7 @@ module.exports = {
     entry: './src/index.js',
 
     output: {
-        path: path.resolve(__dirname, '../www/gamee-tools'),
+        path: path.resolve(__dirname, '../www/gamee-emulator'),
         filename: 'gamee-tools.js'
     },
 
