@@ -39,21 +39,116 @@
 
             <ul class="nav navbar-nav">
                 <li><a href="index.html">Emulator</a></li>
-                <li class="active"><a href="examples.html">Examples</a></li>
+                <li><a href="examples.html">Examples</a></li>
                 <li><a href="how-to-connect-phone.html">How to connect phone</a></li>
             </ul>
             <ul class="nav navbar-nav align-right">
                 <li><a href="game-data-help.html">Game data help</a></li>
-                <li><a href="https://github.com/gameeapp/gamee-js/wiki"><img src="gamee-emulator/img/github.ico" class="github-ico">Gamee wiki</a></li>
+                <li>
+                    <a href="https://github.com/gameeapp/gamee-js/wiki"><img src="gamee-emulator/img/github.ico" class="github-ico">Gamee wiki</a>
+                </li>
             </ul>
         </div>
     </nav>
 
     <!-- Begin page content -->
-    <div class="container page-content background-light col-md-8 col-md-offset-2 col-xs-12 col-xs-offset-0">
+    <div class="container page-content background-light col-md-12 col-xs-12">
 
-        <div class="index-content">
+        <div class="emulator-tools-wrapper">
+            <div class="emulator-window-wrapper">
+                <div class="emulator-window">
 
+                </div>
+            </div>
+
+            <div class="emulator-capabilities-wrapper">
+                <div class="save-state-wrapper capability-wrapper">
+                    <h2><span class="icon save" aria-hidden="true"></span> Save state</h2>
+
+                    <div class="new-data-bar">
+                        <p>New save state data available</p>
+                        <ul>
+                            <li><a href="#" class="action-paste">Paste here</a></li>
+                            <li><a href="#" class="action-show">Show</a></li>
+                            <li><a href="#" class="action-export">Export to file</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="save-state-data">Save state data</label>
+                        <textarea class="form-control" rows="3" id="save-state-data">{"init-param": {
+        "configGlossary:installationAt": "Philadelphia, PA",
+        "configGlossary:adminEmail": "ksm@pobox.com",
+        "configGlossary:poweredBy": "Cofax",
+        "configGlossary:poweredByIcon": "/images/cofax.gif"</textarea>
+                    </div>
+
+                </div>
+                <div class="replay-wrapper capability-wrapper">
+                    <h2><span class="icon replay" aria-hidden="true"></span> Replay</h2>
+
+                    <div class="capability-active-wrapper">
+                        <div class="new-data-bar">
+                            <p>New replay data available</p>
+                            <ul>
+                                <li><a href="#" class="action-paste">Paste here</a></li>
+                                <li><a href="#" class="action-show">Show</a></li>
+                                <li><a href="#" class="action-export">Export to file</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="replay-data-variant">Variant</label>
+                            <textarea class="form-control" rows="1" id="replay-data-variant">Insert replay variant data</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="replay-data">Replay data</label>
+                            <textarea class="form-control" rows="3" id="replay-data">{"init-param": {
+        "configGlossary:installationAt": "Philadelphia, PA",
+        "configGlossary:adminEmail": "ksm@pobox.com",
+        "configGlossary:poweredBy": "Cofax",
+        "configGlossary:poweredByIcon": "/images/cofax.gif"</textarea>
+                        </div>
+
+                        <div class="capability-send-wrapper">
+                            <button class="btn btn-default green" id="action-play-replay"><span class="icon replay" aria-hidden="true"></span> Play replay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ghost-mode-wrapper capability-wrapper">
+                    <h2><span class="icon ghost" aria-hidden="true"></span> Ghost mode</h2>
+
+                    <div class="capability-active-wrapper">
+                        <div class="new-data-bar">
+                            <p>New ghost mode data available</p>
+                            <ul>
+                                <li><a href="#" class="action-paste">Paste here</a></li>
+                                <li><a href="#" class="action-show">Show</a></li>
+                                <li><a href="#" class="action-export">Export to file</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ghost-mode-data-variant">Variant</label>
+                            <textarea class="form-control" rows="1" id="ghost-mode-data-variant">Insert ghost mode variant data</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ghost-mode-data">Ghost mode data</label>
+                            <textarea class="form-control" rows="3" id="ghost-mode-data">{"init-param": {
+        "configGlossary:installationAt": "Philadelphia, PA",
+        "configGlossary:adminEmail": "ksm@pobox.com",
+        "configGlossary:poweredBy": "Cofax",
+        "configGlossary:poweredByIcon": "/images/cofax.gif"</textarea>
+                        </div>
+                        <div class="capability-send-wrapper">
+                            <button class="btn btn-default green" id="action-play-ghost-mode"><span class="icon ghost" aria-hidden="true"></span> Play with Ghost mode</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
     </div>
@@ -68,6 +163,11 @@
     <script src="jquery-1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <!-- page identification -->
+    <script>
+        var PAGE_ID = "emulator";
+    </script>
     <!-- gamee-tools -->
     <script src="gamee-emulator/gamee-tools.js"></script>
 </body>

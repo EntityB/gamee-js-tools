@@ -7,7 +7,7 @@ html {
     height: 100%;
 }
 
-body {    
+body {
     background-color: #292e3d;
     display: table-cell;
 }
@@ -17,7 +17,7 @@ body, a, a:hover, h1, h2, h3, h4, h5, p, input, button {
     color: #FFFFFF;
 }
 
-.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, .form-control:focus {   
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, .form-control:focus {
     outline: none;
     outline-color: transparent;
 }
@@ -47,7 +47,7 @@ body, a, a:hover, h1, h2, h3, h4, h5, p, input, button {
     /*padding: 0;*/
     /*margin: 0;*/
     vertical-align: middle;
-    line-height: 40px;  
+    line-height: 40px;
     font-size: 14px;
     color: #292e3d;
     opacity: 0.6;
@@ -85,7 +85,7 @@ body, a, a:hover, h1, h2, h3, h4, h5, p, input, button {
 }
 
 .page-content {
-    min-height: 100%;
+    min-height: 100vh;
     /* navbar padding */
     padding-top: 64px;
     position: relative;
@@ -182,7 +182,7 @@ button.green:active, button.green:focus {
     position: absolute;
 }
 
-.index-content {    
+.index-content {
   text-align: left;
 }
 
@@ -243,7 +243,7 @@ h2 {
         text-align: left;
     }
     .page-content {
-        min-height: 0; 
+        min-height: 0;
         padding-top: 0px;
     }
     .index-content {
@@ -252,4 +252,132 @@ h2 {
     .hamster-robot {
         position: relative;
     }
-} 
+}
+
+
+/* emulator */
+
+.emulator-tools-wrapper {
+    display: table;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.emulator-window-wrapper {
+    width: 640px;
+    float: left;
+    margin-right: 30px;
+}
+
+.emulator-window {
+    width: 640px;
+    height: 640px;
+    border-radius: 4px;
+    background-color: #DDD;
+    overflow: hidden;
+    margin: 0 0 20px;
+}
+
+.emulator-capabilities-wrapper {
+    min-width: 672px;
+    min-height: 800px;
+    float: left;
+}
+
+.capability-wrapper {
+    border-radius: 4px;
+    background-color: #191d27;
+    text-align: left;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.capability-wrapper h2 {
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.capability-wrapper .new-data-bar {
+    height: 32px;
+    border-radius: 4px;
+    background-color: #2c3039;
+    font-size: 13px;
+    color: #ffffff;
+    padding: 7px 16px;
+    margin: 15px 0;
+}
+
+.capability-wrapper .new-data-bar p {
+    float: left;
+}
+
+.capability-wrapper .new-data-bar ul {
+    float: right;
+}
+
+.capability-wrapper .new-data-bar ul li {
+    float: left;
+    text-indent: 0;
+    list-style: none;
+    margin-left: 28px; 
+}
+
+.capability-wrapper .new-data-bar a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0089df;
+}
+
+.capability-wrapper .form-group label {
+    opacity: 0.78;
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 100;
+}
+
+.capability-wrapper .form-group textarea {
+    background-color: transparent;
+    border-radius: 4px;
+    border: solid 1px #444;
+    overflow: hidden;
+    color: #d2d2d2;
+    height: 80px;
+}
+
+.capability-wrapper .form-group textarea:focus {
+    height: 600px;
+    overflow: initial;
+}
+
+.capability-wrapper button {
+    margin: 15px 0;
+    width: 216px;
+    text-align: center;
+}
+
+.capability-send-wrapper {
+    text-align: right;
+}
+
+.capability-wrapper .icon {
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 22px; /* Or size of icon + spacing */
+}
+
+.capability-wrapper h2 .icon {
+    padding-left: 24px;
+}
+
+.capability-wrapper .icon.ghost {
+    background-image: url("/gamee-emulator/img/ghost-mode.png");
+}
+
+.capability-wrapper .icon.replay {
+    background-image: url("/gamee-emulator/img/replay.png");
+}
+
+.capability-wrapper .icon.save {
+    background-image: url("/gamee-emulator/img/save-state.png");
+}
