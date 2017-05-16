@@ -58,8 +58,11 @@
         <div class="emulator-tools-wrapper">
             <div class="emulator-window-wrapper">
                 <div class="emulator-window" id="emulator-window">
-                    <div class="overlay">
-                        <div class="overlay-message">Waiting for game to send init method</div>
+                    <div class="overlay" id="overlay">
+                        <div class="overlay-play" id="overlay-play"></div>
+                        <div class="overlay-score">Score: <span class="score-value" id="score-value">0</span></div>
+                        <div class="overlay-pause" id="overlay-pause"></div>
+                        <div class="overlay-message" id="status-message">Waiting for game to send init method</div>
                     </div>
                 </div>
                 <div class="emulator-tools-actions-wrapper">
@@ -76,14 +79,14 @@
 
                     <div class="capability-send-wrapper">
                         <button class="btn btn-default transparent" id="action-delete-save-data">Delete save data</button>
-                        <button class="btn btn-default green" id="action-restart">Restart</button>
+                        <button class="btn btn-default green" id="action-restart">Reload</button>
                     </div>
                 </div>
                 <div class="shortcut-hints">
                     <p class="shortcut">P</p>
                     <p>Pause</p>
                     <p class="shortcut">R</p>
-                    <p>Restart</p>
+                    <p>Reload</p>
                     <p class="shortcut">E</p>
                     <p>Mobile mode</p>
                     <p class="shortcut">M</p>
@@ -94,7 +97,7 @@
             </div>
 
             <div class="emulator-capabilities-wrapper">
-                <div class="save-state-wrapper capability-wrapper">
+                <div class="save-state-wrapper capability-wrapper" id="save-state">
                     <h2><span class="icon save" aria-hidden="true"></span> Save state</h2>
 
                     <div class="capability-loading-wrapper">
@@ -119,31 +122,27 @@
 
                     <div class="capability-not-available-wrapper">
                         <p>Save state is not available, because game didn't send "savestate" capability in init method</p>
-                        <p><a href="#" target="_blank">Read more about savestate capability</a></p>
+                        <p><a target="_blank">Read more about savestate capability</a></p>
                     </div>
 
                     <div class="capability-active-wrapper">
                         <div class="new-data-bar">
                             <p>New save state data available</p>
                             <ul>
-                                <li><a href="#" class="action-paste">Paste here</a></li>
-                                <li><a href="#" class="action-show">Show</a></li>
-                                <li><a href="#" class="action-export">Export to file</a></li>
+                                <li><a class="action-paste">Paste here</a></li>
+                                <li><a class="action-show">Show</a></li>
+                                <li><a class="action-export">Export to file</a></li>
                             </ul>
                         </div>
 
                         <div class="form-group">
                             <label for="save-state-data">Save state data</label>
-                            <textarea class="form-control" rows="3" id="save-state-data">{"init-param": {
-        "configGlossary:installationAt": "Philadelphia, PA",
-        "configGlossary:adminEmail": "ksm@pobox.com",
-        "configGlossary:poweredBy": "Cofax",
-        "configGlossary:poweredByIcon": "/images/cofax.gif"</textarea>
+                            <textarea class="form-control" rows="3" id="save-state-data" placeholder="Insert save state data"></textarea>
                         </div>
                     </div>
 
                 </div>
-                <div class="replay-wrapper capability-wrapper">
+                <div class="replay-wrapper capability-wrapper" id="replay">
                     <h2><span class="icon replay" aria-hidden="true"></span> Replay</h2>
 
                     <div class="capability-loading-wrapper">
@@ -168,31 +167,27 @@
 
                     <div class="capability-not-available-wrapper">
                         <p>Save state is not available, because game didn't send "savestate" capability in init method</p>
-                        <p><a href="#" target="_blank">Read more about savestate capability</a></p>
+                        <p><a target="_blank">Read more about savestate capability</a></p>
                     </div>
 
                     <div class="capability-active-wrapper">
                         <div class="new-data-bar">
                             <p>New replay data available</p>
                             <ul>
-                                <li><a href="#" class="action-paste">Paste here</a></li>
-                                <li><a href="#" class="action-show">Show</a></li>
-                                <li><a href="#" class="action-export">Export to file</a></li>
+                                <li><a class="action-paste">Paste here</a></li>
+                                <li><a class="action-show">Show</a></li>
+                                <li><a class="action-export">Export to file</a></li>
                             </ul>
                         </div>
 
                         <div class="form-group">
                             <label for="replay-data-variant">Variant</label>
-                            <textarea class="form-control" rows="1" id="replay-data-variant">Insert replay variant data</textarea>
+                            <textarea class="form-control" rows="1" id="replay-data-variant" placeholder="Insert replay variant data"></textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="replay-data">Replay data</label>
-                            <textarea class="form-control" rows="3" id="replay-data">{"init-param": {
-        "configGlossary:installationAt": "Philadelphia, PA",
-        "configGlossary:adminEmail": "ksm@pobox.com",
-        "configGlossary:poweredBy": "Cofax",
-        "configGlossary:poweredByIcon": "/images/cofax.gif"</textarea>
+                            <textarea class="form-control" rows="3" id="replay-data" placeholder="Insert replay data"></textarea>
                         </div>
 
                         <div class="capability-send-wrapper">
@@ -200,7 +195,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="ghost-mode-wrapper capability-wrapper">
+                <div class="ghost-mode-wrapper capability-wrapper" id="ghost-mode">
                     <h2><span class="icon ghost" aria-hidden="true"></span> Ghost mode</h2>
 
                     <div class="capability-loading-wrapper">
@@ -225,31 +220,27 @@
 
                     <div class="capability-not-available-wrapper">
                         <p>Save state is not available, because game didn't send "savestate" capability in init method</p>
-                        <p><a href="#" target="_blank">Read more about savestate capability</a></p>
+                        <p><a target="_blank">Read more about savestate capability</a></p>
                     </div>
 
                     <div class="capability-active-wrapper">
                         <div class="new-data-bar">
                             <p>New ghost mode data available</p>
                             <ul>
-                                <li><a href="#" class="action-paste">Paste here</a></li>
-                                <li><a href="#" class="action-show">Show</a></li>
-                                <li><a href="#" class="action-export">Export to file</a></li>
+                                <li><a class="action-paste">Paste here</a></li>
+                                <li><a class="action-show">Show</a></li>
+                                <li><a class="action-export">Export to file</a></li>
                             </ul>
                         </div>
 
                         <div class="form-group">
                             <label for="ghost-mode-data-variant">Variant</label>
-                            <textarea class="form-control" rows="1" id="ghost-mode-data-variant">Insert ghost mode variant data</textarea>
+                            <textarea class="form-control" rows="1" id="ghost-mode-data-variant" placeholder="Insert ghost mode variant data"></textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="ghost-mode-data">Ghost mode data</label>
-                            <textarea class="form-control" rows="3" id="ghost-mode-data">{"init-param": {
-        "configGlossary:installationAt": "Philadelphia, PA",
-        "configGlossary:adminEmail": "ksm@pobox.com",
-        "configGlossary:poweredBy": "Cofax",
-        "configGlossary:poweredByIcon": "/images/cofax.gif"</textarea>
+                            <textarea class="form-control" rows="3" id="ghost-mode-data" placeholder="Insert ghost mode data"></textarea>
                         </div>
                         <div class="capability-send-wrapper">
                             <button class="btn btn-default green" id="action-play-ghost-mode"><span class="icon ghost" aria-hidden="true"></span> Play with Ghost mode</button>

@@ -12,9 +12,14 @@ body {
     display: table-cell;
 }
 
-body, a, a:hover, h1, h2, h3, h4, h5, p, input, button {
+body, h1, h2, h3, h4, h5, p, input, button {
     font-family: 'Open Sans',"Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #FFFFFF;
+}
+
+a, a:hover {
+    color: #0089df;
+    cursor: pointer;
 }
 
 .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, .form-control:focus {
@@ -449,7 +454,8 @@ h2 {
     margin: 40px 0;
 }
 
-.capability-not-available-wrapper, .capability-active-wrapper, .emulator-tools-actions-wrapper, .shortcut-hints {
+.capability-not-available-wrapper, .capability-active-wrapper, #action-delete-save-data, .new-data-bar,
+#action-play-ghost-mode, #action-play-replay {
     display: none;
 }
 
@@ -464,9 +470,75 @@ h2 {
     height: 100%;
     background-color: rgba(0,0,0,0.8);
     position: absolute;
+    pointer-events: none;
+}
+
+.emulator-window .overlay * {
+    pointer-events: initial;
 }
 
 .emulator-window .overlay-message {
     display: table;
     margin: 310px auto;
+}
+
+.overlay a {
+    color: #0089df;
+    cursor: pointer;
+}
+
+.overlay-play {
+    display: none;
+    width: 100px;
+    height: 100px;
+    background: url(/gamee-emulator/img/c-play.svg);
+    overflow: hidden;
+    position: absolute;
+    top: 270px;
+    left: 270px;
+    cursor: pointer;
+}
+
+.overlay-play:hover {
+    background-position: 100px 0;
+}
+
+.overlay-score {
+    display: none;
+    background-color: rgba(255,255,255,.8);
+    text-align: center;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #292e3d;
+    border-radius: 4px;
+    position: absolute;
+    top: 15px;
+    padding: 3px 12px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.score-value {
+    color: #5ac546;
+}
+
+.overlay-pause {
+    display: none;
+    position: absolute;
+    left: 3px;
+    bottom: 3px;
+    width: 40px;
+    height: 40px;
+    background-image: url(/gamee-emulator/img/ic-pause1.svg);
+    background-color: rgba(255,255,255,.4);
+    background-position: center center;
+    background-repeat: no-repeat;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.overlay-pause:hover {
+    background-color: rgba(255,255,255,.8);
 }
