@@ -17,6 +17,7 @@
     <!--custom styles-->
     <link href="gamee-emulator/sticky-footer.css" rel="stylesheet">
     <link href="gamee-emulator/style.css" rel="stylesheet">
+    <link href="gamee-emulator/loading.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -56,8 +57,39 @@
 
         <div class="emulator-tools-wrapper">
             <div class="emulator-window-wrapper">
-                <div class="emulator-window">
+                <div class="emulator-window" id="emulator-window">
+                    <div class="overlay">
+                        <div class="overlay-message">Waiting for game to send init method</div>
+                    </div>
+                </div>
+                <div class="emulator-tools-actions-wrapper">
+                    <div class="radio">
+                        <label>
+    <input type="radio" name="platfom" id="platfom1" value="desktop" checked>Desktop
+  </label>
+                    </div>
+                    <div class="radio disabled">
+                        <label>
+    <input type="radio" name="platfom" id="platfom2" value="mobile" disabled>Mobile
+  </label>
+                    </div>
 
+                    <div class="capability-send-wrapper">
+                        <button class="btn btn-default transparent" id="action-delete-save-data">Delete save data</button>
+                        <button class="btn btn-default green" id="action-restart">Restart</button>
+                    </div>
+                </div>
+                <div class="shortcut-hints">
+                    <p class="shortcut">P</p>
+                    <p>Pause</p>
+                    <p class="shortcut">R</p>
+                    <p>Restart</p>
+                    <p class="shortcut">E</p>
+                    <p>Mobile mode</p>
+                    <p class="shortcut">M</p>
+                    <p>Mute</p>
+                    <p class="shortcut">G</p>
+                    <p>Ghost mode</p>
                 </div>
             </div>
 
@@ -65,27 +97,79 @@
                 <div class="save-state-wrapper capability-wrapper">
                     <h2><span class="icon save" aria-hidden="true"></span> Save state</h2>
 
-                    <div class="new-data-bar">
-                        <p>New save state data available</p>
-                        <ul>
-                            <li><a href="#" class="action-paste">Paste here</a></li>
-                            <li><a href="#" class="action-show">Show</a></li>
-                            <li><a href="#" class="action-export">Export to file</a></li>
-                        </ul>
+                    <div class="capability-loading-wrapper">
+                        <div class="windows8">
+                            <div class="wBall" id="wBall_1">
+                                <div class="wInnerBall"></div>
+                            </div>
+                            <div class="wBall" id="wBall_2">
+                                <div class="wInnerBall"></div>
+                            </div>
+                            <div class="wBall" id="wBall_3">
+                                <div class="wInnerBall"></div>
+                            </div>
+                            <div class="wBall" id="wBall_4">
+                                <div class="wInnerBall"></div>
+                            </div>
+                            <div class="wBall" id="wBall_5">
+                                <div class="wInnerBall"></div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="save-state-data">Save state data</label>
-                        <textarea class="form-control" rows="3" id="save-state-data">{"init-param": {
+                    <div class="capability-not-available-wrapper">
+                        <p>Save state is not available, because game didn't send "savestate" capability in init method</p>
+                        <p><a href="#" target="_blank">Read more about savestate capability</a></p>
+                    </div>
+
+                    <div class="capability-active-wrapper">
+                        <div class="new-data-bar">
+                            <p>New save state data available</p>
+                            <ul>
+                                <li><a href="#" class="action-paste">Paste here</a></li>
+                                <li><a href="#" class="action-show">Show</a></li>
+                                <li><a href="#" class="action-export">Export to file</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="save-state-data">Save state data</label>
+                            <textarea class="form-control" rows="3" id="save-state-data">{"init-param": {
         "configGlossary:installationAt": "Philadelphia, PA",
         "configGlossary:adminEmail": "ksm@pobox.com",
         "configGlossary:poweredBy": "Cofax",
         "configGlossary:poweredByIcon": "/images/cofax.gif"</textarea>
+                        </div>
                     </div>
 
                 </div>
                 <div class="replay-wrapper capability-wrapper">
                     <h2><span class="icon replay" aria-hidden="true"></span> Replay</h2>
+
+                    <div class="capability-loading-wrapper">
+                        <div class="windows8">
+                            <div class="wBall" id="wBall_1">
+                                <div class="wInnerBall"></div>
+                            </div>
+                            <div class="wBall" id="wBall_2">
+                                <div class="wInnerBall"></div>
+                            </div>
+                            <div class="wBall" id="wBall_3">
+                                <div class="wInnerBall"></div>
+                            </div>
+                            <div class="wBall" id="wBall_4">
+                                <div class="wInnerBall"></div>
+                            </div>
+                            <div class="wBall" id="wBall_5">
+                                <div class="wInnerBall"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="capability-not-available-wrapper">
+                        <p>Save state is not available, because game didn't send "savestate" capability in init method</p>
+                        <p><a href="#" target="_blank">Read more about savestate capability</a></p>
+                    </div>
 
                     <div class="capability-active-wrapper">
                         <div class="new-data-bar">
@@ -118,6 +202,31 @@
                 </div>
                 <div class="ghost-mode-wrapper capability-wrapper">
                     <h2><span class="icon ghost" aria-hidden="true"></span> Ghost mode</h2>
+
+                    <div class="capability-loading-wrapper">
+                        <div class="windows8">
+                            <div class="wBall" id="wBall_1">
+                                <div class="wInnerBall"></div>
+                            </div>
+                            <div class="wBall" id="wBall_2">
+                                <div class="wInnerBall"></div>
+                            </div>
+                            <div class="wBall" id="wBall_3">
+                                <div class="wInnerBall"></div>
+                            </div>
+                            <div class="wBall" id="wBall_4">
+                                <div class="wInnerBall"></div>
+                            </div>
+                            <div class="wBall" id="wBall_5">
+                                <div class="wInnerBall"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="capability-not-available-wrapper">
+                        <p>Save state is not available, because game didn't send "savestate" capability in init method</p>
+                        <p><a href="#" target="_blank">Read more about savestate capability</a></p>
+                    </div>
 
                     <div class="capability-active-wrapper">
                         <div class="new-data-bar">

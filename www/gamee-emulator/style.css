@@ -276,6 +276,7 @@ h2 {
     background-color: #DDD;
     overflow: hidden;
     margin: 0 0 20px;
+    position: relative;
 }
 
 .emulator-capabilities-wrapper {
@@ -296,6 +297,7 @@ h2 {
     font-size: 16px;
     letter-spacing: 1px;
     color: #ffffff;
+    margin-top: 5px;
 }
 
 .capability-wrapper .new-data-bar {
@@ -380,4 +382,91 @@ h2 {
 
 .capability-wrapper .icon.save {
     background-image: url("/gamee-emulator/img/save-state.png");
+}
+
+.emulator-tools-actions-wrapper .radio {
+    float: left;
+    margin: 10px;
+    margin-left: 0;
+}
+
+.emulator-tools-actions-wrapper .radio+.radio {
+    margin: 10px;
+    margin-left: 0;
+}
+
+.capability-send-wrapper button:focus:hover, .capability-send-wrapper button:focus, .capability-send-wrapper button:active:focus {
+    padding-top: 6px;
+}
+
+.emulator-tools-actions-wrapper .capability-send-wrapper button {
+    width: 200px;
+    margin-left: 15px;
+}
+
+.capability-send-wrapper button.transparent {
+    background-color: transparent;
+    color: #fff;
+    border-color: #666;
+}
+
+.capability-send-wrapper button.transparent:hover {
+    background-color: transparent;
+    border-color: #888;
+}
+
+.capability-send-wrapper button.transparent:active {
+    background-color: transparent;
+    color: #fff;
+    border-color: #0089df;
+}
+
+.shortcut-hints {
+    margin: 20px 0;
+    text-align: left;
+}
+.shortcut-hints p {
+    opacity: 0.24;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: transparent;
+    display: inline-block;
+    margin-right: 16px;
+}
+
+.shortcut-hints p.shortcut {
+    width: 19px;
+    height: 19px;
+    border-radius: 4px;
+    background-color: #ffffff;  
+    font-weight: 600;
+    color: #292e3d;
+    margin-right: 2px;
+    text-align: center;
+}
+
+.capability-loading-wrapper, .capability-not-available-wrapper {
+    margin: 40px 0;
+}
+
+.capability-not-available-wrapper, .capability-active-wrapper, .emulator-tools-actions-wrapper, .shortcut-hints {
+    display: none;
+}
+
+.emulator-window iframe {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.emulator-window .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    position: absolute;
+}
+
+.emulator-window .overlay-message {
+    display: table;
+    margin: 310px auto;
 }

@@ -79,12 +79,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // import {tools} from './tools.js';
 
 
+
 switch (PAGE_ID) {
     case "index":
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__startEmulator_js__["a" /* registerEmulatePost */])();
         break;
     case "emulator":
-
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__startEmulator_js__["b" /* createEmulatorIframe */])();
         break;
     case "examples":
 
@@ -98,10 +99,12 @@ switch (PAGE_ID) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = registerEmulatePost;
+/* harmony export (immutable) */ __webpack_exports__["b"] = createEmulatorIframe;
 
 var inputId = "iframe-url",
     buttonId = "iframe-url-sub",
-    emulatorUrl = "emulator.html";
+    emulatorUrl = "emulator.html",
+    urlQuery = "projectUrl";
 
 function registerEmulatePost() {
 
@@ -113,7 +116,7 @@ function registerEmulatePost() {
         sendButton.addEventListener("click", function () {
             var url = input.value;
             if (isUrl(url)) {
-                window.location = window.location.origin + "/" + emulatorUrl + "?projectUrl=" + url;
+                window.location = window.location.origin + "/" + emulatorUrl + "?" + urlQuery + "=" + url;
             } else {
                 // throw "Invalid URL";
                 alert("Invalid URL");
@@ -123,8 +126,37 @@ function registerEmulatePost() {
 }
 
 function isUrl(s) {
-   var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
-   return regexp.test(s);
+    var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
+    return regexp.test(s);
+}
+
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split('&');
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split('=');
+        if (decodeURIComponent(pair[0]) == variable) {
+            return decodeURIComponent(pair[1]);
+        }
+    }
+    console.log('Query variable %s not found', variable);
+}
+
+function createEmulatorIframe() {
+    var iframeUrl, iframeEl, iframeWrapper;
+
+    iframeUrl = getQueryVariable(urlQuery);
+    iframeWrapper = document.querySelector("#emulator-window");
+    iframeEl = document.createElement("iframe");
+
+    iframeEl.width = "640";
+    iframeEl.height = "640";
+    iframeEl.style.width = "640px;";
+    iframeEl.style.height = "640px;";
+    iframeEl.scrolling = "no";
+    
+    iframeWrapper.appendChild(iframeEl);
+    iframeEl.src = iframeUrl;
 }
 
 /***/ })
