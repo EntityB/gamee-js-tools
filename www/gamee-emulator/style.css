@@ -1,9 +1,8 @@
-@font-face { font-family: RooneySans; src:url(/gamee-emulator/fonts/rooney_sans-webfont.ttf); }
-
+/*@font-face { font-family: RooneySans; src:url(../gamee-emulator/fonts/rooney_sans-webfont.ttf); }*/
 
 html {
     display: table;
-    width:100%;
+    width: 100%;
     height: 100%;
 }
 
@@ -12,8 +11,13 @@ body {
     display: table-cell;
 }
 
+body.index {
+    background-image: url("img/bg.jpg");
+    background-size: cover;
+}
+
 body, h1, h2, h3, h4, h5, p, input, button {
-    font-family: 'Open Sans',"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #FFFFFF;
 }
 
@@ -22,12 +26,16 @@ a, a:hover {
     cursor: pointer;
 }
 
+label {
+    font-weight: 600;
+}
+
 .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, .form-control:focus {
     outline: none;
     outline-color: transparent;
 }
 
-.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+.container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header {
     margin-left: 50px;
 }
 
@@ -41,6 +49,7 @@ a, a:hover {
 .navbar ul.nav.navbar-nav.align-right {
     float: right;
 }
+
 .navbar ul li {
     /*height: 40px;*/
     /*margin: 0 45px;*/
@@ -48,7 +57,7 @@ a, a:hover {
     text-align: center;
 }
 
-.navbar-default .navbar-nav>li>a {
+.navbar-default .navbar-nav > li > a {
     /*padding: 0;*/
     /*margin: 0;*/
     vertical-align: middle;
@@ -59,22 +68,22 @@ a, a:hover {
     font-weight: 600;
 }
 
-.navbar-default .navbar-nav>li.logo>a {
+.navbar-default .navbar-nav > li.logo > a {
     opacity: 1.0;
 }
 
-.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover {
     color: #292e3d;
     background-color: #FFFFFF;
     opacity: 0.6;
 }
 
-.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>.active>a:hover {
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > .active > a:hover {
     font-weight: 600;
     opacity: 1.0;
 }
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover {
     font-weight: 600;
     opacity: 1.0;
 }
@@ -120,12 +129,43 @@ button.green:active, button.green:focus {
 }
 
 .index-content {
-    margin-top: 150px;
+    position: relative;
+    top: -50px;
 }
+
+/* flexboxes*/
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+/*end of flexboxes*/
+
+.index-content_form {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
 
 .hamster-robot {
     position: absolute;
-    bottom: 38px;
+    bottom: 0px;
     left: 0;
     text-align: center;
     height: 191px;
@@ -188,21 +228,21 @@ button.green:active, button.green:focus {
 }
 
 .index-content {
-  text-align: left;
+    text-align: left;
 }
 
 .index-content h1 {
-  font-family: RooneySans, "Comic Sans MS";
-  font-size: 42px;
-  font-weight: bold;
-  line-height: 1.14;
-  text-align: center;
-  color: #ffffff;
-  margin-bottom: 50px;
+    /*font-family: RooneySans, "Comic Sans MS";*/
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 1.14;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 50px;
 }
 
 .index-content label {
-  margin-bottom: 12px;
+    margin-bottom: 12px;
 }
 
 #iframe-url, #iframe-url-sub {
@@ -236,29 +276,32 @@ h2 {
     background-color: #14161d;
 }
 
-
 @media (max-width: 768px) {
     .navbar-fixed-top {
         position: relative;
     }
+
     .navbar ul.nav.navbar-nav.align-right {
         float: none;
     }
-    .navbar-default .navbar-nav>li>a {
+
+    .navbar-default .navbar-nav > li > a {
         text-align: left;
     }
+
     .page-content {
         min-height: 0;
         padding-top: 0px;
     }
-    .index-content {
-        margin-bottom: 200px;
-    }
-    .hamster-robot {
-        position: relative;
-    }
-}
 
+    /*.index-content {
+        margin-bottom: 200px;
+    }*/
+
+    /*.hamster-robot {
+        position: relative;
+    }*/
+}
 
 /* emulator */
 
@@ -327,13 +370,13 @@ h2 {
     float: left;
     text-indent: 0;
     list-style: none;
-    margin-left: 28px; 
+    margin-left: 28px;
 }
 
 .capability-wrapper .new-data-bar a {
-  font-size: 14px;
-  font-weight: 600;
-  color: #0089df;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0089df;
 }
 
 .capability-wrapper .form-group label {
@@ -395,7 +438,7 @@ h2 {
     margin-left: 0;
 }
 
-.emulator-tools-actions-wrapper .radio+.radio {
+.emulator-tools-actions-wrapper .radio + .radio {
     margin: 10px;
     margin-left: 0;
 }
@@ -430,6 +473,7 @@ h2 {
     margin: 20px 0;
     text-align: left;
 }
+
 .shortcut-hints p {
     opacity: 0.24;
     font-size: 12px;
@@ -443,7 +487,7 @@ h2 {
     width: 19px;
     height: 19px;
     border-radius: 4px;
-    background-color: #ffffff;  
+    background-color: #ffffff;
     font-weight: 600;
     color: #292e3d;
     margin-right: 2px;
@@ -468,7 +512,7 @@ h2 {
 .emulator-window .overlay {
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     position: absolute;
     pointer-events: none;
 }
@@ -505,7 +549,7 @@ h2 {
 
 .overlay-score {
     display: none;
-    background-color: rgba(255,255,255,.8);
+    background-color: rgba(255, 255, 255, .8);
     text-align: center;
     margin: 0 auto;
     font-size: 16px;
@@ -530,7 +574,7 @@ h2 {
     width: 40px;
     height: 40px;
     background-image: url(/gamee-emulator/img/ic-pause1.svg);
-    background-color: rgba(255,255,255,.4);
+    background-color: rgba(255, 255, 255, .4);
     background-position: center center;
     background-repeat: no-repeat;
     -moz-border-radius: 5px;
@@ -540,5 +584,5 @@ h2 {
 }
 
 .overlay-pause:hover {
-    background-color: rgba(255,255,255,.8);
+    background-color: rgba(255, 255, 255, .8);
 }
