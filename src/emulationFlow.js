@@ -52,11 +52,11 @@ function switchStatusMessagePhase(phase, opt_callback) {
 
     switch (phase) {
         case "loading":
-            message = "Waiting for game to send init method";
+            message = "Waiting for init method ...";
             statusMessageEl.innerHTML = message;
             break;
         case "setup":
-            message = "Now you can change data on your right side and then click ";
+            message = "You may change data in right column now and then select ";
             statusMessageEl.innerHTML = message;
             continueEl = document.createElement("a");
             continueEl.innerText = "continue";
@@ -113,7 +113,7 @@ function newCapabilityData(capability, data) {
     newWrapperEl.querySelector(".action-show").addEventListener("click", function () {
         var tempData = data;
         if (typeof tempData === "object") {
-            tempData = JSON.stringify(tempData);
+            tempData = "###variant###<br>" + tempData.variant + '<br><br><br><br>' + "###data###<br>" + tempData.data;
         }
 
         window.open("_blank", capability, "height=500,width=500menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes").document.write(tempData);
@@ -121,7 +121,7 @@ function newCapabilityData(capability, data) {
     newWrapperEl.querySelector(".action-export").addEventListener("click", function () {
         var tempData = data;
         if (typeof tempData === "object") {
-            saveData(tempData.variant + "\n\n\n\n" + tempData.data, capability + ".txt");
+            saveData("###variant###    " + tempData.variant + '   ' + "###data###    " + tempData.data, capability + ".txt");
         } else {
             saveData(tempData, capability + ".txt");
         }
@@ -415,7 +415,7 @@ var saveData = (function () {
     document.body.appendChild(a);
     a.style = "display: none";
     return function (data, fileName) {
-        var blob = new Blob([data], { type: "text/plain;charset=utf-8" }),
+        var blob = new Blob([data], { type: "octet/stream" }),
             url = window.URL.createObjectURL(blob);
         a.href = url;
         a.download = fileName;
