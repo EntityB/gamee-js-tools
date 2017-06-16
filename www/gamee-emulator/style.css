@@ -124,8 +124,36 @@ button.green:active, button.green:focus {
 }
 
 .index-content {
-    margin-top: 150px;
+    /*margin-top: 150px;
+    display: flex;
+    align-items: center;*/
 }
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.index-content__wrapper {
+
+}
+
+
+
+
+
+
+
+
+
+
 
 .hamster-robot {
     position: absolute;

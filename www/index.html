@@ -21,86 +21,88 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="html5shiv-3.7.3/html5shiv.min.js"></script>
-      <script src="respond-1.4.2/respond.min.js"></script>
+    <script src="html5shiv-3.7.3/html5shiv.min.js"></script>
+    <script src="respond-1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">
-                    <img src="gamee-emulator/img/logo-dev.png" srcset="img/logo-dev@2x.png 2x, img/logo-dev@3x.png 3x" class="gamee-developers-portal-logotype">
-                </a>
-            </div>
-
-
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html">Emulator</a></li>
-                <li><a href="examples.html">Examples</a></li>
-                <li><a href="how-to-connect-phone.html">How to connect phone</a></li>
-            </ul>
-            <ul class="nav navbar-nav align-right">
-                <li><a href="game-data-help.html">Game data help</a></li>
-                <li>
-                    <a href="https://github.com/gameeapp/gamee-js/wiki"><img src="gamee-emulator/img/github.ico" class="github-ico">Gamee wiki</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Begin page content -->
-    <div class="container page-content background-light col-md-8 col-md-offset-2 col-xs-12 col-xs-offset-0">
-
-        <div class="index-content">
-            <h1>Test your game in real environment</h1>
-            <div class="col-md-6 col-md-offset-3 col-xs-12 col-xs-offset-0">
-                <label for="iframe-url">URL where your game is running</label>
-                <div class="input-group">
-                    <input type="text" class="form-control" id="iframe-url" placeholder="http://localhost:8080">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default green" id="iframe-url-sub">Upload game</button>
-                    </div>
-                </div>
-            </div>
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">
+                <img src="gamee-emulator/img/logo-dev.png" srcset="img/logo-dev@2x.png 2x, img/logo-dev@3x.png 3x"
+                     class="gamee-developers-portal-logotype">
+            </a>
         </div>
 
-        <div class="hamster-robot col-md-12 col-xs-12">
-            <div class="hamster-robot-image hidden-xs">
-                <img src="gamee-emulator/img//krecek-robot.png" srcset="gamee-emulator/img//krecek-robot@2x.png 2x, gamee-emulator/img//krecek-robot@3x.png 3x">
-            </div>
-            <div class="hamster-robot-textbox-wrapper">
-                <div class="hamster-robot-textbox col-xs-12">
-                    <div class="hamster-robot-textbox-arrow"></div>
-                    <div class="transform-zero">
-                        <p>New to Gamee?</p>
-                        <p> Check our <a href="#">Dev Portal</a> first.</p>
-                    </div>
+
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Emulator</a></li>
+            <li><a href="examples.html">Examples</a></li>
+            <li><a href="how-to-connect-phone.html">How to connect phone</a></li>
+        </ul>
+        <ul class="nav navbar-nav align-right">
+            <li><a href="game-data-help.html">Game data help</a></li>
+            <li>
+                <a href="https://github.com/gameeapp/gamee-js/wiki"><img src="gamee-emulator/img/github.ico"
+                                                                         class="github-ico">Gamee wiki</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Begin page content -->
+<div class="container page-content d-flex align-items-center justify-content-center">
+    <div class="index-content">
+        <h1>Test your game in real environment</h1>
+        <div class="col-md-6 col-md-offset-3 col-xs-12 col-xs-offset-0">
+            <label for="iframe-url">URL where your game is running</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="iframe-url" placeholder="http://localhost:8080">
+                <div class="input-group-btn">
+                    <button class="btn btn-default green" id="iframe-url-sub">Upload game</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <p class="text-muted">© GAMEEAPP 2017</p>
+    <!--<div class="hamster-robot col-md-12 col-xs-12">
+        <div class="hamster-robot-image hidden-xs">
+            <img src="gamee-emulator/img//krecek-robot.png"
+                 srcset="gamee-emulator/img//krecek-robot@2x.png 2x, gamee-emulator/img//krecek-robot@3x.png 3x">
         </div>
-    </footer>
+        <div class="hamster-robot-textbox-wrapper">
+            <div class="hamster-robot-textbox col-xs-12">
+                <div class="hamster-robot-textbox-arrow"></div>
+                <div class="transform-zero">
+                    <p>New to Gamee?</p>
+                    <p> Check our <a href="#">Dev Portal</a> first.</p>
+                </div>
+            </div>
+        </div>
+    </div>-->
+</div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="jquery-1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">© GAMEEAPP 2017</p>
+    </div>
+</footer>
 
-    <!-- page identification -->
-    <script>
-        var PAGE_ID = "index";
-    </script>
-    <!-- gamee-tools -->
-    <script src="gamee-emulator/gamee-tools.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="jquery-1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+<!-- page identification -->
+<script>
+    var PAGE_ID = "index";
+</script>
+<!-- gamee-tools -->
+<script src="gamee-emulator/gamee-tools.js"></script>
 </body>
 
 </html>
