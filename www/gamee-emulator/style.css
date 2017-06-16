@@ -11,6 +11,11 @@ body {
     display: table-cell;
 }
 
+body.index {
+    background-image: url("img/bg.jpg");
+    background-size: cover;
+}
+
 body, h1, h2, h3, h4, h5, p, input, button {
     font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #FFFFFF;
@@ -144,7 +149,7 @@ button.green:active, button.green:focus {
 /*end of flexboxes*/
 
 .index-content_form {
-    max-width: 450px;
+    max-width: 520px;
     margin: 0 auto;
 }
 
@@ -160,7 +165,7 @@ button.green:active, button.green:focus {
 
 .hamster-robot {
     position: absolute;
-    bottom: 38px;
+    bottom: 0px;
     left: 0;
     text-align: center;
     height: 191px;
