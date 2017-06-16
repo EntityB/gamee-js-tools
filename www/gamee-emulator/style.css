@@ -124,11 +124,11 @@ button.green:active, button.green:focus {
 }
 
 .index-content {
-    /*margin-top: 150px;
-    display: flex;
-    align-items: center;*/
+    position: relative;
+    top: -50px;
 }
 
+/* flexboxes*/
 .d-flex {
     display: flex;
 }
@@ -141,8 +141,11 @@ button.green:active, button.green:focus {
     justify-content: center;
 }
 
-.index-content__wrapper {
+/*end of flexboxes*/
 
+.index-content_form {
+    max-width: 450px;
+    margin: 0 auto;
 }
 
 
